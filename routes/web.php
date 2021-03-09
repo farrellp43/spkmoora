@@ -11,8 +11,15 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('map', 'AdminController@map')->name('admin.map');
     Route::get('users', 'AdminController@userRead')->name('users.read');
+
+    // Alternatives
     Route::get('data/alternatives', 'AdminController@alternativeRead')->name('alternatives.read');
     Route::post('data/alternatives/create', 'AdminController@alternativeCreate')->name('alternative.create');
+    Route::get('data/alternatives/{id}/edit', 'AdminController@alternativeEdit')->name('alternative.edit'); 
+    Route::patch('data/alternatives/{id}/update', 'AdminController@alternativeUpdate')->name('alternative.update'); 
+    Route::delete('data/alternatives/{id}/delete', 'AdminController@alternativeDelete')->name('alternative.delete');
+
+    // Criterias
     Route::get('data/criterias', 'AdminController@criteriaRead')->name('criterias.read');
     Route::get('criteria/{id}', 'AdminController@criteriaShow')->name('criteria.show');
     Route::get('classification', 'AdminController@classificationRead')->name('classification.read');
