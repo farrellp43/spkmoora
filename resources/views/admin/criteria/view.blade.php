@@ -51,7 +51,6 @@
                                 <th>ID</th>
                                 <th>Alternatives</th>
                                 <th>Value</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -61,9 +60,6 @@
                                 <td>{{ $alternative->alternative_id }}</td>
                                 <td>{{ $alternative->nama }}</td>
                                 <td>{{ $alternative->value }}</td>
-                                <td>
-                                    <a class="btn btn-info" href="#">Edit</a>
-                                </td>
                             </tr>
                             @endforeach
                         </tbody>

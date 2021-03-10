@@ -43,7 +43,7 @@
                     @foreach ($values as $value)
                     <div class="form-group">
                         <h5 class="label-control">{{ $value->nama }}</h5>
-                        <input class="form-control" type="text" name="criteria[]" value="{{ $value->value }}">
+                        <input class="form-control" type="number" name="criteria[]" value="{{ $value->value }}">
                         @error('criteria')
                         <div class="mt-2 text-danger">
                             {{ $message }}

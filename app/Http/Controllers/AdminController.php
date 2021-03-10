@@ -135,6 +135,26 @@ class AdminController extends Controller
         return view('admin/data/criterias', compact('criterias'));
     }
 
+    public function criteriaEdit($id)
+    {
+        $allCriteria = Criteria::all();
+        $criteria = Criteria::find($id);
+
+        return view('admin/data/criteriaEdit', compact('allCriteria', 'criteria'));
+    }
+
+    public function criteriaUpdate(Request $request)
+    {
+        DB::table('criterias')->where('id', $request->id)->update([
+            'nama' => $request->nama,
+            'tipe' => $request->tipe,
+        ]);
+
+        session()->flash('info', 'Criteria updated');
+
+        return redirect(route('criterias.read'));
+    }
+
     public function criteriaShow($criteria)
     {
         $alternatives = Value::where('criteria_id', '=', $criteria)->join('alternatives', 'alternatives.id', '=', 'values.alternative_id')->get();
@@ -148,6 +168,15 @@ class AdminController extends Controller
     {
         $classifications = Criteria::join('classifications', 'classifications.criteria_id', '=', 'criterias.id')->get();
         return view('admin/classification', compact('classifications'));
+    }
+
+    public function classificationUpdate(Request $request)
+    {
+        DB::table('classifications')->where('id', $request->id)->update(['classification' => $request->classification]);
+
+        session()->flash('info', 'Classification updated');
+
+        return redirect(route('classification.read'));
     }
 
     public function userRead()

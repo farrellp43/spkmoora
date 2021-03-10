@@ -33,7 +33,7 @@
                                 <td>{{$criteria->tipe }}</td>
                                 <td>{{$criteria->bobot }}</td>
                                 <td>
-                                    <a class="btn btn-info" href="#">Edit</a>
+                                    <a class="btn btn-info" href="{{ route('criteria.edit', $criteria->id) }}">Edit</a>
                                 </td>
                             </tr>
                             @endforeach

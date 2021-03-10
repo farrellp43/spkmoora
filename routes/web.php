@@ -21,8 +21,15 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // Criterias
     Route::get('data/criterias', 'AdminController@criteriaRead')->name('criterias.read');
+    Route::get('data/criterias/{id}/edit', 'AdminController@criteriaEdit')->name('criteria.edit');
+    Route::patch('data/criterias/{id}/update', 'AdminController@criteriaUpdate')->name('criteria.update');
     Route::get('criteria/{id}', 'AdminController@criteriaShow')->name('criteria.show');
+
+    // Classification
     Route::get('classification', 'AdminController@classificationRead')->name('classification.read');
+    Route::patch('classification/update', 'AdminController@classificationUpdate')->name('classification.update');
+
+    // Moora
     Route::get('moora/matrix', 'MooraController@matrix')->name('moora.matrix');
     Route::get('moora/normalization', 'MooraController@normalization')->name('moora.normalization');
     Route::get('moora/optimization', 'MooraController@optimization')->name('moora.optimization');
