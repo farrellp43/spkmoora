@@ -154,6 +154,7 @@
         </div>
     </div>
 
+    {{-- Script JS --}}
     <script src="{{ url('modules/jquery.min.js') }}"></script>
     <script src="{{ url('modules/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url('modules/datatables/datatables.min.js') }}"></script>

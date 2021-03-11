@@ -56,9 +56,15 @@
                         <li class="nav-item">
                             <a class="nav-link page-scroll" href="#services">About</a>
                         </li>
+                        @guest
                         <li class="nav-item">
                             <a class="btn btn-singin" href="{{ route('login') }}">Sign in</a>
                         </li>
+                        @else
+                        <li class="nav-item">
+                            <a class="btn btn-singin" href="{{ route('login') }}">Go to Admin</a>
+                        </li>
+                        @endguest
                     </ul>
                 </div>
             </div>
