@@ -11,9 +11,9 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <div class="card rounded">
+            <div class="card rounded card-primary">
                 <div class="card-body">
-                    <button class="btn btn-info btn-md" type="button" data-toggle="collapse" data-target="#collapseKet"
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseKet"
                         aria-expanded="false" aria-controls="collapseKet">Keterangan</button>
                     <div class="collapse" id="collapseKet">
                         <table width="100%" class="table table-striped table-bordered table-hover table-md" id="Ket">
@@ -43,7 +43,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card rounded">
+            <div class="card rounded card-primary">
                 <div class="card-body">
                     <table width="100%" class="table table-striped table-bordered table-hover table-md" id="DataTables">
                         <thead>

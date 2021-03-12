@@ -146,8 +146,8 @@ class AdminController extends Controller
     public function criteriaUpdate(Request $request)
     {
         DB::table('criterias')->where('id', $request->id)->update([
-            'nama' => $request->nama,
             'tipe' => $request->tipe,
+            'bobot' => $request->bobot,
         ]);
 
         session()->flash('info', 'Criteria updated');

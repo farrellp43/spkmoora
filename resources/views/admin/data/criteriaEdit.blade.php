@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group">
                         <h5 class="label-control">Nama</h5>
-                        <input class="form-control" type="text" name="nama" value="{{ $criteria->nama }}">
+                        <input class="form-control" disabled type="text" name="nama" value="{{ $criteria->nama }}">
                     </div>
                     <div class="form-group">
                         <h5 class="label-control">Tipe</h5>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <h5 class="label-control">Bobot</h5>
-                        <input disabled class="form-control" type="number" name="bobot" value="{{ $criteria->bobot }}">
+                        <input class="form-control" type="number" name="bobot" value="{{ $criteria->bobot }}">
                     </div>
                     <button class="btn btn-success btn-md" type="submit">Submit</button>
                 </form>

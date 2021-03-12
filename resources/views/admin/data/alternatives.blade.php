@@ -12,9 +12,9 @@
 
 
 <div class="container">
-    <div class="card rounded">
+    <div class="card rounded card-primary">
         <div class="card-body">
-            <button class="btn btn-primary btn-md" type="button" data-toggle="collapse" data-target="#collapseTambah"
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTambah"
                 aria-expanded="false" aria-controls="collapseTambah">
                 Add
             </button>
@@ -133,7 +133,7 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="card rounded">
+            <div class="card rounded card-primary">
                 <div class="card-body">
                     <table width="100%" class="table table-striped table-bordered table-hover table-md" id="DataTables">
                         <thead>

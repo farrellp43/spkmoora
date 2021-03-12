@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="card shadow rounded">
+            <div class="card rounded card-primary">
                 <div class="card-body">
                     <table width="100%" class="table table-striped table-bordered table-hover table-md" id="DataTables">
                         <thead>

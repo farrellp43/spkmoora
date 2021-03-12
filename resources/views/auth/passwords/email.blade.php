@@ -2,7 +2,7 @@
 
 @section('content')
 
-@section('title','reset password')
+@section('title','forgot password')
 
 <div id="app">
     <section class="section">
