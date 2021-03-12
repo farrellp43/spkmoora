@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\{Alternative, Criteria, Value};
+use App\{Alternative, Criteria, User, Value};
+use App\Helpers\Helper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,22 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin/dashboard');
+        $countAlternatives = Alternative::count();
+        $countCriterias = Criteria::count();
+        $countValues = Value::count();
+        $countUsers = User::count();
+
+        $alternative = Helper::getAlternative();
+        $optimization = Helper::valOptimize();
+
+        //--mengurutkan data secara descending dengan tetap mempertahankan key/index array-nya
+        arsort($optimization);
+        //-- mendapatkan key/index item array yang pertama
+        $index = key($optimization);
+
+        $rank = 1;
+
+        return view('admin/dashboard', compact('countAlternatives', 'countCriterias', 'countValues', 'countUsers', 'optimization', 'alternative', 'rank'));
     }
 
     public function map()
@@ -108,7 +124,7 @@ class AdminController extends Controller
         $length = count($request->criteria) + 1;
 
         for ($i = 1; $i < $length; $i++) {
-        DB::table('values')->where('alternative_id', $request->id)->where('criteria_id', $i)->update([
+            DB::table('values')->where('alternative_id', $request->id)->where('criteria_id', $i)->update([
                 'value' => $request->criteria[$i - 1],
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]);
