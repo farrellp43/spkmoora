@@ -98,7 +98,7 @@
             </div>
         </div>
         <div class="col-md-7 ml-auto mr-auto">
-            <img src="{{ url('img/computer_tokui_boy.png') }}" width="90%" alt="">
+            <img src="{{ url('img/irasutoya/computer_tokui_boy.png') }}" width="90%" alt="">
         </div>
     </div>
 </section>

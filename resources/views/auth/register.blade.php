@@ -68,6 +68,9 @@
                                         <input id="password-confirm" type="password" class="form-control"
                                             name="password_confirmation" required autocomplete="new-password">
                                     </div>
+                                    <div class="form-group" style="display:none">
+                                        <input id="role" type="text" class="form-control" name="role" value="user">
+                                    </div>
                                 </div>
 
                                 <div class="form-group">

@@ -121,10 +121,12 @@
                                         class="nav-link" href="{{ route('moora.ranking') }}">Ranking</a></li>
                             </ul>
                         </li>
+                        @if (Auth::user()->role == "administrator")
                         <li class="menu-header">Auth</li>
                         <li class="nav-item {{ (request()->is('admin/users')) ? "active" : '' }}"><a class="nav-link"
                                 href="{{ route('users.read') }}"><i class="far fa-user"></i>
                                 <span>Users</span></a></li>
+                        @endif
                     </ul>
                 </aside>
             </div>
@@ -188,6 +190,13 @@
               'autoWidth'   : true
             });
           });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#paginationSimpleNumbers').DataTable({
+                "pagingType": "simple_numbers"
+            });
+        });
     </script>
 
 </body>

@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-xs-12 p-0">
                     <div class="intro-img">
-                        <img src="img/internet_heiwa.png" alt="">
+                        <img src="img/irasutoya/internet_heiwa.png" alt="">
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                 <!-- Start Col -->
                 <div class="col-lg-6 col-md-12 pl-0 pt-70 pr-5">
                     <div class="business-item-img">
-                        <img src="img/business/business-img.png" class="img-fluid" alt="">
+                        <img src="{{ url('img/irasutoya/computer_crt_monitor_desktop.png') }}" class="img-fluid" alt="">
                     </div>
                 </div>
                 <!-- End Col -->

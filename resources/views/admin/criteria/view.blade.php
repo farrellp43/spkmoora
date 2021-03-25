@@ -51,6 +51,7 @@
                                 <th>ID</th>
                                 <th>Alternatives</th>
                                 <th>Value</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
@@ -60,6 +61,43 @@
                                 <td>{{ $alternative->alternative_id }}</td>
                                 <td>{{ $alternative->nama }}</td>
                                 <td>{{ $alternative->value }}</td>
+                                <td>
+                                    <button class="btn btn-info" data-toggle="modal"
+                                        data-target="#modaledit{{ $alternative->id }}">Edit</button>
+                                    <div class="modal fade" id="modaledit{{ $alternative->id }}">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Edit {{ $alternative->nama }}</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('value.update') }}" method="POST">
+                                                        @method('patch')
+                                                        @csrf
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $alternative->id }}">
+                                                        <br>
+                                                        <div class="form-group">
+                                                            <h5 class="label-control">Nama</h5>
+                                                            <input class="form-control" disabled type="text" name="nama"
+                                                                value="{{ $alternative->nama }}">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <h5 class="label-control">Nilai</h5>
+                                                            <input autofocus class="form-control" type="number"
+                                                                name="value" value="{{ $alternative->value }}">
+                                                        </div>
+                                                </div>
+                                                <div class="modal-footer bg-whitesmoke br">
+                                                    <button type="button" class="btn btn-danger"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-success">Save</button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

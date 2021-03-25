@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\{Alternative, Criteria, User, Value};
+use App\{Alternative, Classification, Criteria, User, Value};
 use App\Helpers\Helper;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -180,6 +180,17 @@ class AdminController extends Controller
         return view('admin/criteria/view', compact('alternatives', 'criterias', 'classifications'));
     }
 
+    public function criteriaValueUpdate(Request $request)
+    {
+        $update = Value::find($request->id);
+        $update->value = $request->value;
+        $update->save();
+
+        session()->flash('info', 'Value updated');
+
+        return redirect()->back();
+    }
+
     public function classificationRead()
     {
         $classifications = Criteria::join('classifications', 'classifications.criteria_id', '=', 'criterias.id')->get();
@@ -188,7 +199,9 @@ class AdminController extends Controller
 
     public function classificationUpdate(Request $request)
     {
-        DB::table('classifications')->where('id', $request->id)->update(['classification' => $request->classification]);
+        $update = Classification::find($request->id);
+        $update->classification = $request->classification;
+        $update->save();
 
         session()->flash('info', 'Classification updated');
 
@@ -197,7 +210,30 @@ class AdminController extends Controller
 
     public function userRead()
     {
-        return view('admin/users');
+        $users = User::get();
+        return view('admin/users', compact('users'));
+    }
+
+    public function userUpdate(Request $request)
+    {
+        $update = User::find($request->id);
+        $update->name = $request->name;
+        $update->role = $request->role;
+        $update->save();
+
+        session()->flash('info', 'User updated');
+
+        return redirect()->back();
+    }
+
+    public function userDelete(Request $request)
+    {
+        $data = User::find($request->id);
+        $data->delete();
+
+        session()->flash('danger', 'User deleted');
+        
+        return back();
     }
 
     public function editProfile()
