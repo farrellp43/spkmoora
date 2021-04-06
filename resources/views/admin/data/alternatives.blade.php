@@ -13,12 +13,15 @@
 
 <div class="container">
     <div class="card rounded card-primary">
-        <div class="card-body">
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTambah"
-                aria-expanded="false" aria-controls="collapseTambah">
-                Add
-            </button>
-            <div class="collapse" id="collapseTambah">
+        <div class="card-header">
+            <h4>Add</h4>
+            <div class="card-header-action">
+                <a data-collapse="#collapseTambah" class="btn btn-icon btn-primary" href="#"><i
+                        class="fas fa-plus"></i></a>
+            </div>
+        </div>
+        <div class="collapse" id="collapseTambah">
+            <div class="card-body">
                 <form action="{{ route('alternative.create') }}" method="POST" autocomplete="off" class="form">
                     @csrf
                     <br>
@@ -135,75 +138,82 @@
         <div class="col-12">
             <div class="card rounded card-primary">
                 <div class="card-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover table-md" id="DataTables">
-                        <thead>
-                            <tr align="center">
-                                <th>ID</th>
-                                <th>Alternatives</th>
-                                <th>Code</th>
-                                <th>C1</th>
-                                <th>C2</th>
-                                <th>C3</th>
-                                <th>C4</th>
-                                <th>C5</th>
-                                <th>C6</th>
-                                <th>C7</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
+                    <div class="table-responsive">
+                        <table width="100%" class="table table-striped table-bordered table-hover table-md"
+                            id="DataTables">
+                            <thead>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>Alternatives</th>
+                                    <th>Code</th>
+                                    <th>C1</th>
+                                    <th>C2</th>
+                                    <th>C3</th>
+                                    <th>C4</th>
+                                    <th>C5</th>
+                                    <th>C6</th>
+                                    <th>C7</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            @foreach ($alternatives as $data)
-                            <tr align="center">
-                                <td>{{ $data->id }}</td>
-                                <td>{{ $data->nama }}</td>
-                                <td>{{ $data->kode }}</td>
-                                <td>{{ $data->vegetasi_area }}</td>
-                                <td>{{ $data->volume_material }}</td>
-                                <td>{{ $data->luas_daerah }}</td>
-                                <td>{{ $data->volume_tampungan }}</td>
-                                <td>{{ $data->lama_operasi }}</td>
-                                <td>{{ $data->harga_air }}</td>
-                                <td>{{ $data->akses_jalan }}</td>
-                                <td>
-                                    <a class="btn btn-info" href="{{ route('alternative.edit', $data->id) }}">Edit</a>
-                                    <button class="btn btn-danger" data-toggle="modal"
-                                        data-target="#modaldelete{{ $data->id }}">Delete</button>
-                                    <div class="modal fade" id="modaldelete{{ $data->id }}" role="dialog">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Delete Alternative</h5>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h6 style="font-weight:normal">Do you really want to delete
-                                                        alternative {{ $data->nama }}?</h6>
-                                                    <div class="text-secondary" style="align-content: flex-start">Last
-                                                        updated:
-                                                        {{ $data->updated_at->format('d F Y') }}
+                            <tbody>
+                                @foreach ($alternatives as $data)
+                                <tr align="center">
+                                    <td>{{ $data->id }}</td>
+                                    <td>{{ $data->nama }}</td>
+                                    <td>{{ $data->kode }}</td>
+                                    <td>{{ $data->vegetasi_area }}</td>
+                                    <td>{{ $data->volume_material }}</td>
+                                    <td>{{ $data->luas_daerah }}</td>
+                                    <td>{{ $data->volume_tampungan }}</td>
+                                    <td>{{ $data->lama_operasi }}</td>
+                                    <td>{{ $data->harga_air }}</td>
+                                    <td>{{ $data->akses_jalan }}</td>
+                                    <td>
+                                        <a class="btn btn-icon btn-info"
+                                            href="{{ route('alternative.edit', $data->id) }}"><i
+                                                class="fas fa-edit"></i></a>
+                                        <button class="btn btn-icon btn-danger" data-toggle="modal"
+                                            data-target="#modaldelete{{ $data->id }}"><i
+                                                class="fas fa-trash-alt"></i></button>
+                                        <div class="modal fade" id="modaldelete{{ $data->id }}" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Delete Alternative</h5>
                                                     </div>
-                                                </div>
-                                                <div class="modal-footer bg-whitesmoke br">
-                                                    <div style="display:none">
-                                                        <input type="text" name="id" value="{{ $data->id }}">
+                                                    <div class="modal-body">
+                                                        <h6 style="font-weight:normal">Do you really want to delete
+                                                            alternative {{ $data->nama }}?</h6>
+                                                        <div class="text-secondary" style="align-content: flex-start">
+                                                            Last
+                                                            updated:
+                                                            {{ $data->updated_at->format('d F Y') }}
+                                                        </div>
                                                     </div>
-                                                    <button class="btn btn-md btn-default"
-                                                        data-dismiss="modal">No</button>
-                                                    <form action="{{ route('alternative.delete', $data->id) }}"
-                                                        method="POST" class="form">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <button class="btn btn-danger" type="submit">Yes</button>
-                                                    </form>
+                                                    <div class="modal-footer bg-whitesmoke br">
+                                                        <div style="display:none">
+                                                            <input type="text" name="id" value="{{ $data->id }}">
+                                                        </div>
+                                                        <button class="btn btn-md btn-default"
+                                                            data-dismiss="modal">No</button>
+                                                        <form action="{{ route('alternative.delete', $data->id) }}"
+                                                            method="POST" class="form">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button class="btn btn-danger" type="submit">Yes</button>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

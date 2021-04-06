@@ -14,31 +14,35 @@
         <div class="col-12">
             <div class="card rounded card-primary">
                 <div class="card-body">
-                    <table width="100%" class="table table-striped table-bordered table-hover table-md" id="Criteria">
-                        <thead>
-                            <tr align="center">
-                                <th>ID</th>
-                                <th>Criteria</th>
-                                <th>Type</th>
-                                <th>Weight</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
+                    <div class="table-responsive">
+                        <table width="100%" class="table table-striped table-bordered table-hover table-md"
+                            id="Criteria">
+                            <thead>
+                                <tr align="center">
+                                    <th>ID</th>
+                                    <th>Criteria</th>
+                                    <th>Type</th>
+                                    <th>Weight</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
 
-                        <tbody>
-                            @foreach ($criterias as $criteria)
-                            <tr align="center">
-                                <td>{{$criteria->id}}</td>
-                                <td>{{$criteria->nama }}</td>
-                                <td>{{$criteria->tipe }}</td>
-                                <td>{{$criteria->bobot }}</td>
-                                <td>
-                                    <a class="btn btn-info" href="{{ route('criteria.edit', $criteria->id) }}">Edit</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            <tbody>
+                                @foreach ($criterias as $criteria)
+                                <tr align="center">
+                                    <td>{{ $criteria->id }}</td>
+                                    <td>{{ $criteria->nama }}</td>
+                                    <td>{{ $criteria->tipe }}</td>
+                                    <td>{{ $criteria->bobot }}</td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{ route('criteria.edit', $criteria->id) }}"><i
+                                                class="fas fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

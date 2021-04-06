@@ -12,40 +12,68 @@ Domain Path:      /languages/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
 /* nunito-regular - latin */
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/nunito-v9-latin-regular.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito Regular"), local("Nunito-Regular"), url("../fonts/nunito-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-regular.woff2") format("woff2"), url("../fonts/nunito-v9-latin-regular.woff") format("woff"), url("../fonts/nunito-v9-latin-regular.ttf") format("truetype"), url("../fonts/nunito-v9-latin-regular.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/nunito-v9-latin-regular.eot");
+    /* IE9 Compat Modes */
+    src: local("Nunito Regular"), local("Nunito-Regular"),
+        url("../fonts/nunito-v9-latin-regular.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/nunito-v9-latin-regular.woff2") format("woff2"),
+        url("../fonts/nunito-v9-latin-regular.woff") format("woff"),
+        url("../fonts/nunito-v9-latin-regular.ttf") format("truetype"),
+        url("../fonts/nunito-v9-latin-regular.svg#Nunito") format("svg");
+    /* Legacy iOS */
+}
 /* nunito-600 - latin */
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/nunito-v9-latin-600.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("../fonts/nunito-v9-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-600.woff2") format("woff2"), url("../fonts/nunito-v9-latin-600.woff") format("woff"), url("../fonts/nunito-v9-latin-600.ttf") format("truetype"), url("../fonts/nunito-v9-latin-600.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/nunito-v9-latin-600.eot");
+    /* IE9 Compat Modes */
+    src: local("Nunito SemiBold"), local("Nunito-SemiBold"),
+        url("../fonts/nunito-v9-latin-600.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/nunito-v9-latin-600.woff2") format("woff2"),
+        url("../fonts/nunito-v9-latin-600.woff") format("woff"),
+        url("../fonts/nunito-v9-latin-600.ttf") format("truetype"),
+        url("../fonts/nunito-v9-latin-600.svg#Nunito") format("svg");
+    /* Legacy iOS */
+}
 /* nunito-700 - latin */
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/nunito-v9-latin-700.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito Bold"), local("Nunito-Bold"), url("../fonts/nunito-v9-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-700.woff2") format("woff2"), url("../fonts/nunito-v9-latin-700.woff") format("woff"), url("../fonts/nunito-v9-latin-700.ttf") format("truetype"), url("../fonts/nunito-v9-latin-700.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/nunito-v9-latin-700.eot");
+    /* IE9 Compat Modes */
+    src: local("Nunito Bold"), local("Nunito-Bold"),
+        url("../fonts/nunito-v9-latin-700.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/nunito-v9-latin-700.woff2") format("woff2"),
+        url("../fonts/nunito-v9-latin-700.woff") format("woff"),
+        url("../fonts/nunito-v9-latin-700.ttf") format("truetype"),
+        url("../fonts/nunito-v9-latin-700.svg#Nunito") format("svg");
+    /* Legacy iOS */
+}
 /* nunito-800 - latin */
 @font-face {
-  font-family: 'Nunito';
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/nunito-v9-latin-800.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"), url("../fonts/nunito-v9-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/nunito-v9-latin-800.woff2") format("woff2"), url("../fonts/nunito-v9-latin-800.woff") format("woff"), url("../fonts/nunito-v9-latin-800.ttf") format("truetype"), url("../fonts/nunito-v9-latin-800.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 800;
+    src: url("../fonts/nunito-v9-latin-800.eot");
+    /* IE9 Compat Modes */
+    src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"),
+        url("../fonts/nunito-v9-latin-800.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/nunito-v9-latin-800.woff2") format("woff2"),
+        url("../fonts/nunito-v9-latin-800.woff") format("woff"),
+        url("../fonts/nunito-v9-latin-800.ttf") format("truetype"),
+        url("../fonts/nunito-v9-latin-800.svg#Nunito") format("svg");
+    /* Legacy iOS */
+}
 /* ==========================================================================
    GENERAL
    ========================================================================== */
@@ -1229,12 +1257,12 @@ button:focus {
     font-size: 50px;
     font-weight: 500;
     position: relative;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 #pricing .pricing-table h1 span {
     font-size: 16px;
     position: absolute;
-    left: 20%;
+    /* left: 20%; */
     top: 10px;
 }
 #pricing .pricing-table ul {
@@ -1773,4 +1801,12 @@ button:focus {
     -webkit-transition: all 300ms;
     -o-transition: all 300ms;
     transition: all 300ms;
+}
+
+.modal-backdrop {
+    z-index: 100000 !important;
+}
+
+.modal {
+    z-index: 100001 !important;
 }
